@@ -1,0 +1,11 @@
+@media (max-width: 767px) {
+  th,
+  td {
+    font-size: 12px;
+  }
+  .update,
+  .delete {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
