@@ -68,7 +68,7 @@ async function readEmp() {
         <td>${response[key].lName}</td>
         <td>${response[key].age}</td>
         <td>${response[key].salary}</td>
-        <td>${response[key].department}</td>
+        <td class="text-center">${response[key].department}</td>
         <td class="d-flex justify-content-between">
           <button class="btn btn-success update w-75 me-2" onClick="getSpecificEmp('${key}', '${response[key].fName}', '${response[key].lName}', '${response[key].age}', '${response[key].salary}', '${response[key].department}')">Update</button>
           <button class="btn btn-danger delete w-75" onClick="deleteEmp('${key}')">Delete</button>
