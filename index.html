@@ -8,26 +8,27 @@
   <title>CRUD Operations</title>
 </head>
 <body>
-  <div class="container">
-    <form class="w-50 mx-auto mt-5">
+  <div class="container mt-5">
+    <h1 class="text-center mb-3 text-light">Add Your Employee</h1>
+    <form class="w-50 mx-auto">
       <div class="mb-3">
-        <label for="exampleInputFName" class="form-label">First Name</label>
+        <label for="exampleInputFName" class="form-label text-light">First Name</label>
         <input type="text" class="form-control" id="exampleInputFName" aria-describedby="emailHelp" required>
       </div>
       <div class="mb-3">
-        <label for="exampleInputLName" class="form-label">Last Name</label>
+        <label for="exampleInputLName" class="form-label text-light">Last Name</label>
         <input type="text" class="form-control" id="exampleInputLName" required>
       </div>
       <div class="mb-3">
-        <label for="exampleInputAge" class="form-label">Age</label>
+        <label for="exampleInputAge" class="form-label text-light">Age</label>
         <input type="number" class="form-control" id="exampleInputAge" required>
       </div>
       <div class="mb-3">
-        <label for="exampleInputSalary" class="form-label">Salary</label>
+        <label for="exampleInputSalary" class="form-label text-light">Salary</label>
         <input type="number" class="form-control" id="exampleInputSalary" required>
       </div>
       <div class="dropdown">
-        <label for="departments" class="d-block mb-2">Choose a department:</label>
+        <label for="departments" class="d-block mb-2 text-light">Choose a department:</label>
         <select class="p-2 fs-6 mb-3" name="departments" id="departments" required>
           <option value="" disabled selected>Select an option</option>
           <option value="CS">Computer Science</option>
@@ -41,22 +42,22 @@
       <button type="submit" class="btn btn-primary addBtn">Add</button>
       <button type="submit" class="btn btn-success updateBtn">Update</button>
     </form>
-    <table class="table w-75 mx-auto mt-5">
+    <table class="table w-75 mx-auto mt-5 table-danger">
       <thead>
         <tr>
-          <th class="text-bg-info" scope="col">#</th>
-          <th class="text-bg-info" scope="col">First_Name</th>
-          <th class="text-bg-info" scope="col">Last_Name</th>
-          <th class="text-bg-info" scope="col">Age</th>
-          <th class="text-bg-info" scope="col">Salary</th>
-          <th class="text-bg-info" scope="col">Department</th>
-          <th class="text-bg-info" scope="col"></th>
-          <th class="text-bg-info" scope="col"></th>
+          <th scope="col">#</th>
+          <th scope="col">First_Name</th>
+          <th scope="col">Last_Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Department</th>
+          <th scope="col" class="text-center">Edit</th>
         </tr>
       </thead>
       <tbody>
       </tbody>
     </table>
+    
   </div>
   <script src="./main.js"></script>
 </body>
