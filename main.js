@@ -35,23 +35,25 @@ function clearFields() {
 }
 
 async function createEmp() {
-  let employee = {
-    fName: fName.value,
-    lName: lName.value,
-    age: age.value,
-    salary: salary.value,
-    department: department.value,
-  }
-  let response = await fetch(`https://crud-operations-27456-default-rtdb.firebaseio.com/employee.json`, {
-    method: 'POST',
-    body: JSON.stringify(employee),
-    headers: {
-      'Content-Type': 'application/json',
+  if (fName.value && lName.value && age.value && salary.value && department.value) {
+    let employee = {
+      fName: fName.value,
+      lName: lName.value,
+      age: age.value,
+      salary: salary.value,
+      department: department.value,
     }
-  });
-  clearFields();
-  tbody.innerHTML = ``;
-  readEmp();
+    let response = await fetch(`https://crud-operations-27456-default-rtdb.firebaseio.com/employee.json`, {
+      method: 'POST',
+      body: JSON.stringify(employee),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+    clearFields();
+    tbody.innerHTML = ``;
+    readEmp();
+  }
 }
 
 async function readEmp() {
@@ -67,8 +69,10 @@ async function readEmp() {
         <td>${response[key].age}</td>
         <td>${response[key].salary}</td>
         <td>${response[key].department}</td>
-        <td><button class="btn btn-success update" onClick="getSpecificEmp('${key}', '${response[key].fName}', '${response[key].lName}', '${response[key].age}', '${response[key].salary}', '${response[key].department}')">Update</button></td>
-        <td><button class="btn btn-danger delete" onClick="deleteEmp('${key}')">Delete</button></td>
+        <td class="d-flex justify-content-between">
+          <button class="btn btn-success update w-75 me-2" onClick="getSpecificEmp('${key}', '${response[key].fName}', '${response[key].lName}', '${response[key].age}', '${response[key].salary}', '${response[key].department}')">Update</button>
+          <button class="btn btn-danger delete w-75" onClick="deleteEmp('${key}')">Delete</button>
+        </td>
       </tr>
     `;
   }
